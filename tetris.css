@@ -1,0 +1,147 @@
+body {
+  background-color: #1a1a2e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: "Press Start 2P", cursive;
+  color: #e94560;
+  overflow: hidden;
+}
+
+.game-container {
+  background-color: #16213e;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(233, 69, 96, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.game-container::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, transparent, #e94560, transparent 30%);
+  animation: rotate 10s linear infinite;
+  z-index: -1;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+h1 {
+  text-align: center;
+  color: #e94560;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px #0f3460;
+  font-size: 2.5em;
+}
+
+.game-area {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+}
+
+.game-info {
+  margin-right: 20px;
+}
+
+.info-box {
+  background-color: #0f3460;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  box-shadow: 0 0 10px rgba(233, 69, 96, 0.3);
+}
+
+canvas {
+  border: 4px solid #e94560;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(233, 69, 96, 0.5);
+}
+
+#tetris {
+  background-color: #000;
+}
+
+.next-piece-container {
+  margin-left: 20px;
+}
+
+.next-piece-container h3 {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+#nextPiece {
+  background-color: #0f3460;
+}
+
+.controls {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 10px;
+  color: #e94560;
+}
+
+.tetromino {
+  position: absolute;
+  font-size: 30px;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+#startScreen,
+#gameOverScreen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(22, 33, 62, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+#startScreen button,
+#gameOverScreen button {
+  background-color: #e94560;
+  color: #16213e;
+  border: none;
+  padding: 10px 20px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+#startScreen button:hover,
+#gameOverScreen button:hover {
+  background-color: #16213e;
+  color: #e94560;
+  box-shadow: 0 0 10px #e94560;
+}
+
+#gameOverScreen {
+  display: none;
+}
+
+#holdPiece {
+  background-color: #0f3460;
+  margin-bottom: 20px;
+}
